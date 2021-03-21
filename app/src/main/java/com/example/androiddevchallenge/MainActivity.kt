@@ -15,19 +15,24 @@
  */
 package com.example.androiddevchallenge
 
+import Login
 import android.os.Bundle
+import androidx.navigation.compose.rememberNavController
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.core.view.WindowCompat
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
 import com.example.androiddevchallenge.ui.theme.MyTheme
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        WindowCompat.setDecorFitsSystemWindows(window, false)
         setContent {
             MyTheme {
                 MyApp()
@@ -39,9 +44,23 @@ class MainActivity : AppCompatActivity() {
 // Start building your app here!
 @Composable
 fun MyApp() {
+    val navController = rememberNavController()
     Surface(color = MaterialTheme.colors.background) {
-        Text(text = "Ready... Set... GO!")
+        NavHost(navController, startDestination = "welcome") {
+            composable("welcome") {
+                Welcome(navController = navController)
+            }
+            composable("login") {
+                Login(navController = navController)
+            }
+            composable("home") {
+                Home(navController = navController)
+            }
+        }
+
     }
+
+
 }
 
 @Preview("Light Theme", widthDp = 360, heightDp = 640)

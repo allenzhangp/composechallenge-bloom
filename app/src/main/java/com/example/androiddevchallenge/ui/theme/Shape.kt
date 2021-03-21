@@ -21,6 +21,10 @@ import androidx.compose.ui.unit.dp
 
 val shapes = Shapes(
     small = RoundedCornerShape(4.dp),
-    medium = RoundedCornerShape(4.dp),
+    medium = RoundedCornerShape(24.dp),
     large = RoundedCornerShape(0.dp)
 )
+
+val cardElevation = 1.dp
+val snackbarElevation = 2.dp
+val bottomNavigationElevation = 16.dp

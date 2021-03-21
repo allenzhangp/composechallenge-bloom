@@ -27,6 +27,9 @@
     <style name="Theme.AndroidDevChallenge.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+        <item name="android:statusBarColor">#00ffffff</item>
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:windowLightStatusBar">true</item>
     </style>
 
     <style name="Theme.AndroidDevChallenge.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
